@@ -1,6 +1,6 @@
-package com.learn.more.controller;
+package com.feign.learn.controller;
 
-import com.learn.more.entiry.User;
+import com.feign.learn.entiry.User;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -36,14 +36,6 @@ public class UserController implements InitializingBean {
 
   @PostMapping("/add")
   public User add(@RequestBody User user) {
-    user.setId(ID_GENERATOR.incrementAndGet());
-    USER_MAP.put(user.getId(), user);
-    return user;
-  }
-
-  @PostMapping("/addByParam")
-  public User addByParam(@RequestParam String name, @RequestParam int age) {
-    User user = new User(name, age);
     user.setId(ID_GENERATOR.incrementAndGet());
     USER_MAP.put(user.getId(), user);
     return user;

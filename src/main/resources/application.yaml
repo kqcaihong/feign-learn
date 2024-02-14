@@ -1,0 +1,26 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: feign-learn
+
+feign:
+  client:
+    config:
+      client:
+        connectTimeout: 10000
+        readTimeout: 30000
+        loggerLevel: basic
+        retryer:
+        encoder:
+        decoder:
+        errorDecoder:
+        requestInterceptors:
+  compression:
+    request:
+      enabled: true
+      min-request-size: 2048
+    response:
+      enabled: true
+  httpclient:
+    enabled: false
