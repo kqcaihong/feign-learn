@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RequestMapping("/user")
 @RestController
 public class UserController implements InitializingBean {
@@ -26,6 +28,7 @@ public class UserController implements InitializingBean {
 
   @GetMapping("/queryById")
   public User queryById(@RequestParam Long id) {
+    log.info("invoke queryById(), id={}", id);
     return USER_MAP.get(id);
   }
 

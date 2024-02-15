@@ -16,7 +16,9 @@ public class FeignClientTest {
 
   @Test
   public void get() {
-    System.out.println(userFeign.queryById(1L));
+    for (int i = 1; i < 6; i++) {
+      userFeign.queryById((long) i);
+    }
   }
 
   @Test

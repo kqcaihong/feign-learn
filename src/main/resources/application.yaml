@@ -24,3 +24,11 @@ feign:
       enabled: true
   httpclient:
     enabled: false
+
+# 没有注册中心时，使用ribbon
+feign-learn:
+  ribbon:
+    listOfServers: http://localhost:8010,http://localhost:8020
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+    ConnectTimeout: 5000
+    ReadTimeout: 20000
