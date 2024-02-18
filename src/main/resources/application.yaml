@@ -6,8 +6,11 @@ spring:
 
 feign:
   client:
-    config:
-      client:
+    feign-learn-two:
+      connectTimeout: 5000
+      readTimeout: 10000
+    default:
+      config:
         connectTimeout: 10000
         readTimeout: 30000
         loggerLevel: basic
